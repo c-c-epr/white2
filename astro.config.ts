@@ -30,6 +30,7 @@ export default defineConfig({
       ],
     }),
   ],
+  session: false,
   adapter: cloudflare({
     imageService: "compile",
   }),
