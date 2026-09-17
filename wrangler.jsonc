@@ -8,9 +8,6 @@
     "directory": "./dist",
     "binding": "ASSETS",
   },
-  "observability": {
-    "enabled": true,
-  },
   "workers_dev": false,
   "preview_urls": true,
   "routes": [{ "custom_domain": true, "pattern": "white2.ccepr.dev" }],
