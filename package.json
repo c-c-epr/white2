@@ -16,7 +16,7 @@
     "@astrojs/cloudflare": "^14.3.2",
     "@astrojs/starlight": "^0.41.11",
     "astro": "^7.3.2",
-    "sharp": "^0.33.5",
+    "sharp": "^0.35.4",
     "wrangler": "^4.133.0"
   },
   "devDependencies": {
