@@ -5,6 +5,8 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://white2.ccepr.dev",
+  output: "static",
   integrations: [
     starlight({
       title: "My Docs",
