@@ -11,4 +11,5 @@
   "observability": {
     "enabled": true,
   },
+  "routes": [{ "custom_domain": true, "pattern": "white2.ccepr.dev" }],
 }
