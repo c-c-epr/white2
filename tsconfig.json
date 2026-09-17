@@ -5,7 +5,8 @@
     "**/*",
     "../astro.config.mjs",
     "../package.json",
-    "../tsconfig.json"
+    "../tsconfig.json",
+    "./worker-configuration.d.ts"
   ],
   "exclude": ["dist"]
 }

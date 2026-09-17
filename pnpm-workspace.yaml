@@ -1,3 +1,9 @@
 allowBuilds:
   esbuild: true
+  sharp: true
+  workerd: true
 minimumReleaseAge: 1440
+minimumReleaseAgeExclude:
+  - "@astrojs/cloudflare@14.3.2"
+  - miniflare@5.20260916.0-alpha
+  - wrangler@4.133.0
