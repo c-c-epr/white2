@@ -13,11 +13,11 @@
     "generate-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.0.0",
+    "@astrojs/cloudflare": "^14.3.2",
     "@astrojs/starlight": "^0.41.11",
-    "astro": "^7.2.10",
-    "sharp": "^0.33.0",
-    "wrangler": "^4.50.0"
+    "astro": "^7.3.2",
+    "sharp": "^0.33.5",
+    "wrangler": "^4.133.0"
   },
   "devDependencies": {
     "prettier": "3.9.7",
