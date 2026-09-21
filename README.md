@@ -1,49 +1,73 @@
-# Starlight Starter Kit: Basics
+# White²
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+White² 是一個以 Pico 2W 為核心的空氣品質感測學習文件站，整理空氣品質感測、物聯網、巨量資料與地理資訊系統等主題，並記錄每週的實作進度與參考資料。
 
-```
-pnpm create astro@latest -- --template starlight
-```
+文件網站：<https://white2.ccepr.dev>
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 技術
 
-## 🚀 Project Structure
+- [Astro](https://astro.build/)
+- [Starlight](https://starlight.astro.build/)
+- TypeScript
+- Cloudflare Workers / Assets
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+## 專案結構
 
-```
+```text
 .
 ├── public/
 ├── src/
 │   ├── assets/
 │   ├── content/
-│   │   └── docs/
+│   │   └── docs/          # 文件內容（Markdown / MDX）
+│   │       ├── introduce/ # 專案介紹與材料清單
+│   │       ├── reference/ # 參考資料
+│   │       └── weeks/     # 每週進度
 │   └── content.config.ts
-├── astro.config.mjs
+├── astro.config.ts
+├── wrangler.jsonc
 ├── package.json
 └── tsconfig.json
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+Starlight 會讀取 `src/content/docs/` 下的 `.md` 與 `.mdx` 文件，並依檔案路徑產生對應頁面。圖片等素材放在 `src/assets/`；不需要經過打包處理的靜態檔案放在 `public/`。
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## 開始開發
 
-Static assets, like favicons, can be placed in the `public/` directory.
+需要先安裝 [pnpm](https://pnpm.io/installation)。在專案根目錄執行：
 
-## 🧞 Commands
+```bash
+pnpm install
+pnpm dev
+```
 
-All commands are run from the root of the project, from a terminal:
+開發伺服器預設位於 <http://localhost:4321>。
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 常用指令
 
-## 👀 Want to learn more?
+| 指令                  | 用途                     |
+| :-------------------- | :----------------------- |
+| `pnpm dev`            | 啟動本機開發伺服器       |
+| `pnpm build`          | 建立正式版本至 `dist/`   |
+| `pnpm preview`        | 預覽正式版本             |
+| `pnpm lint`           | 執行 TypeScript 型別檢查 |
+| `pnpm format`         | 使用 Prettier 格式化檔案 |
+| `pnpm format:check`   | 檢查檔案格式             |
+| `pnpm astro ...`      | 執行 Astro CLI 指令      |
+| `pnpm generate-types` | 產生 Wrangler 型別       |
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+## 新增文件
+
+1. 在 `src/content/docs/` 下建立 `.md` 或 `.mdx` 檔案。
+2. 在檔案開頭加入 frontmatter，例如 `title` 與 `description`。
+3. 將文件放入對應的 `introduce/`、`weeks/` 或 `reference/` 目錄，側邊欄會依 `astro.config.ts` 的設定顯示。
+4. 執行 `pnpm dev` 檢查頁面，再執行 `pnpm lint` 與 `pnpm build`。
+
+## 部署
+
+專案使用 Cloudflare 設定檔 `wrangler.jsonc` 部署，正式網域為 `white2.ccepr.dev`。部署前請先完成建置並確認 `dist/` 內容：
+
+```bash
+pnpm build
+pnpm wrangler deploy
+```
