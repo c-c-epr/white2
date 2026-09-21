@@ -1,0 +1,4 @@
+User-Agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Allow: /
+Sitemap: https://white2.ccepr.dev/sitemap-index.xml
