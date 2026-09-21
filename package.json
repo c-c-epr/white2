@@ -10,7 +10,9 @@
     "astro": "astro",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "generate-types": "wrangler types"
+    "generate-types": "wrangler types",
+    "lint": "tsc --noEmit",
+    "postinstall": "astro sync"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.2",

@@ -8,5 +8,5 @@
     "../tsconfig.json",
     "./worker-configuration.d.ts"
   ],
-  "exclude": ["dist"]
+  "exclude": ["dist", "astro.config.ts"]
 }

@@ -1,0 +1,77 @@
+---
+title: Week 2
+---
+
+## 修改上週程式寫法
+
+```diff lang="python"
+// led_1.py
+from machine import Pin
+from time import sleep
+
+led = Pin("LED", Pin.OUT)
+while True:
+-    led.toggle()
++    led.value(1)
++    sleep(1)
++    led.value(0)
+    sleep(1)
+```
+
+:::note
+
+第一週使用的 `toggle()` 是將 LED 的狀態反轉，若 LED 是亮的就會變暗，若 LED 是暗的就會變亮。  
+第二週使用的 `value()` 是將 LED 的狀態設為指定的值，若值是 `1` 就會亮，若值是 `0` 就會暗。  
+改用指定值的寫法，可以更好的控制多顆 LED，且單獨管理各顆的點亮時間。
+
+:::
+
+## 點亮多顆 LED
+
+:::tip
+前往 [腳位圖](../../reference/pinout) 查看 LED 對應的腳位號碼。
+:::
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+
+<Tabs>
+  <TabItem label="單顆控制">
+
+    ```python
+    from machine import Pin
+    from time import sleep
+
+    led_red = Pin(1, Pin.OUT) # 紅色 LED 插在 2 號腳位
+    led_yellow = Pin(5, Pin.OUT) # 黃色 LED 插在 7 號腳位
+    led_green = Pin(9, Pin.OUT) # 綠色 LED 插在 12 號腳位
+
+    while True:
+        led_red.value(1)
+        sleep(1)
+        led_red.value(0)
+        led_yellow.value(1)
+        sleep(1)
+        led_yellow.value(0)
+        led_green.value(1)
+        sleep(1)
+        led_green.value(0)
+    ```
+
+  </TabItem>
+  <TabItem label="陣列控制">
+
+    ```python
+    from machine import Pin
+    from time import sleep
+
+    leds = [1,5,9]
+
+    while True:
+        for led in leds:
+            Pin(led, Pin.OUT).value(1)
+            sleep(1)
+            Pin(led, Pin.OUT).value(0)
+    ```
+
+  </TabItem>
+</Tabs>

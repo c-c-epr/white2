@@ -9,29 +9,51 @@ export default defineConfig({
   output: "static",
   integrations: [
     starlight({
-      title: "My Docs",
-      social: [
+      title: "White²",
+      disable404Route: true,
+      head: [
         {
-          icon: "github",
-          label: "GitHub",
-          href: "https://github.com/withastro/starlight",
+          tag: "script",
+          attrs: {
+            defer: true,
+            src: "https://cloud.umami.is/script.js",
+            "data-website-id": "5302d773-69e9-4fa8-9bfb-8113817d934c",
+          },
         },
       ],
+      locales: {
+        root: { label: "繁體中文", lang: "zh-TW" },
+      },
+      social: [],
       sidebar: [
         {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", slug: "guides/example" },
-          ],
+          label: "介紹",
+          items: ["introduce/introduce", "introduce/material"],
         },
         {
-          label: "Reference",
+          label: "每周進度",
+          items: [{ autogenerate: { directory: "weeks" } }],
+        },
+        {
+          label: "參考資料",
           items: [{ autogenerate: { directory: "reference" } }],
         },
       ],
+      editLink: {
+        baseUrl: "https://github.com/c-c-epr/white2/tree/main/",
+      },
     }),
   ],
+  vite: {
+    build: {
+      rollupOptions: {
+        onwarn(warning, warn) {
+          if (warning.code === "MODULE_LEVEL_DIRECTIVE") return;
+          warn(warning);
+        },
+      },
+    },
+  },
   session: false,
   adapter: cloudflare({
     imageService: "compile",

@@ -1,0 +1,24 @@
+---
+title: Pico 2 W 腳位圖
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+![Pinout](../../../assets/pico-2-w-pinout.webp)
+
+<Aside type="tip">
+    以下程式可以指定板子上的 LED 腳位，並將其設為輸出模式。
+
+    ```python
+    led = Pin("LED", Pin.OUT)
+    ```
+    <details>
+        <summary> 在 LED 插在 `2(長)`、`3(短)` 時 ，要如何指定呢？</summary>
+            查表可發現 `2 號` 對應的是 `GP1`，故要指定輸出為 `1`。
+
+        ```python
+        led = Pin(1, Pin.OUT)
+        ```
+    </details>
+
+</Aside>
