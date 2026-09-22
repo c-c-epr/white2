@@ -2,11 +2,23 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 import cloudflare from "@astrojs/cloudflare";
+import {
+  latestWeekPath,
+  weekSidebarItems,
+  weeklyRedirects,
+} from "./src/config/weeks";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://white2.ccepr.dev",
   output: "static",
+  redirects: {
+    ...weeklyRedirects,
+    latest: {
+      status: 307,
+      destination: latestWeekPath,
+    },
+  },
   integrations: [
     starlight({
       title: "White²",
@@ -32,7 +44,7 @@ export default defineConfig({
         },
         {
           label: "每周進度",
-          items: [{ autogenerate: { directory: "weeks" } }],
+          items: weekSidebarItems,
         },
         {
           label: "參考資料",
