@@ -8,6 +8,8 @@ import {
   weeklyRedirects,
 } from "./src/config/weeks";
 
+import starlightRosePine from "starlight-theme-rose-pine";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://white2.ccepr.dev",
@@ -21,6 +23,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
+      plugins: [starlightRosePine()],
       title: "White²",
       disable404Route: true,
       head: [

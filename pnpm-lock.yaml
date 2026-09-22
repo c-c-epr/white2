@@ -181,6 +181,9 @@ importers:
       sharp:
         specifier: ^0.35.4
         version: 0.35.4(@types/node@24.13.6)
+      starlight-theme-rose-pine:
+        specifier: ^0.2.0
+        version: 0.2.0(@astrojs/starlight@0.41.11(astro@7.3.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.6))(supports-color@10.2.2)(typescript@7.0.2))
       wrangler:
         specifier: ^4.135.0
         version: 4.135.0(@types/node@24.13.6)
@@ -2324,6 +2327,12 @@ packages:
 
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
+
+  starlight-theme-rose-pine@0.2.0:
+    resolution: {integrity: sha512-aA9haHUEdtpIQpS0GTEDOEgbSpKLOqTvQkI+42tjQNaTwFf1lFc9bR/CjQNKdIi4XxBCQDk7AEvfGSkUWSHghw==}
+    engines: {node: '>=22.12.0'}
+    peerDependencies:
+      '@astrojs/starlight': '>=0.38'
 
   stringify-entities@4.0.4:
     resolution: {integrity: sha512-IwfBptatlO+QCJUo19AqvrPNqlVMpW9YEL2LIVY+Rpv2qsjCGxaDLNRgeGsQWJhfItebuJhsGSLjaBbNSQ+ieg==}
@@ -5149,6 +5158,10 @@ snapshots:
   source-map@0.7.6: {}
 
   space-separated-tokens@2.0.2: {}
+
+  starlight-theme-rose-pine@0.2.0(@astrojs/starlight@0.41.11(astro@7.3.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.6))(supports-color@10.2.2)(typescript@7.0.2)):
+    dependencies:
+      '@astrojs/starlight': 0.41.11(astro@7.3.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@24.13.6))(supports-color@10.2.2)(typescript@7.0.2)
 
   stringify-entities@4.0.4:
     dependencies:
