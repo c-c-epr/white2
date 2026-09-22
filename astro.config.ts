@@ -39,6 +39,7 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "reference" } }],
         },
       ],
+      pagination: false,
       editLink: {
         baseUrl: "https://github.com/c-c-epr/white2/tree/main/",
       },
