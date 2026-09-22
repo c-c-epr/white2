@@ -23,7 +23,12 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      plugins: [starlightRosePine()],
+      plugins: [
+        starlightRosePine({
+          light: { flavor: "dawn", accent: "rose" },
+          dark: { flavor: "moon", accent: "rose" },
+        }),
+      ],
       title: "White²",
       disable404Route: true,
       head: [
