@@ -33,6 +33,9 @@ export const weeklyRedirects = Object.fromEntries(
 
 export const weekSidebarItems = weekSlugs.map((slug) =>
   slug === latestWeekSlug
-    ? { slug: `weeks/${slug}`, badge: { text: "最新", variant: "success" } }
+    ? {
+        slug: `weeks/${slug}`,
+        badge: { text: "最新", variant: "success" as const },
+      }
     : `weeks/${slug}`,
 );
