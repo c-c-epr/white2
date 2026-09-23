@@ -30,7 +30,6 @@ export default defineConfig({
         }),
       ],
       title: "White²",
-      disable404Route: true,
       head: [
         {
           tag: "script",
