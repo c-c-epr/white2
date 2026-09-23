@@ -55,7 +55,14 @@ export default defineConfig({
         },
         {
           label: "參考資料",
-          items: [{ autogenerate: { directory: "reference" } }],
+          items: [
+            { autogenerate: { directory: "reference" } },
+            {
+              label: "MQTT.py",
+              link: "codes/MQTT.py",
+              badge: { text: "檔案", variant: "tip" },
+            },
+          ],
         },
       ],
       pagination: false,
