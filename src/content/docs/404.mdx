@@ -4,11 +4,10 @@ template: splash
 editUrl: false
 hero:
   title: "404"
-  tagline: 訪問的頁面不存在。請檢查 URL 或嘗試使用搜尋列。
+  tagline: "訪問的頁面不存在。<br> 請檢查 URL 或嘗試使用搜尋列。"
+  actions:
+    - text: "回到最新文章"
+      link: /latest
+      icon: right-arrow
+      iconPlacement: start
 ---
-
-import { LinkButton } from "@astrojs/starlight/components";
-
-<LinkButton href="/latest" icon="right-arrow" iconPlacement="start">
-  回到最新文章
-</LinkButton>
