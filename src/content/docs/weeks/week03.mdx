@@ -8,26 +8,47 @@ DHT22 是一款數位式溫濕度感測器，能夠測量環境的溫度與濕�
 
 ### 讀取 DHT22 感測器資料
 
+| DHT22 | Pico 2W |
+| :---: | :-----: |
+|   +   |   36    |
+| data  |   34    |
+|   -   |   38    |
+
 ```python
+from machine import Pin
+import utime
+import dht
+
+dSensor = dht.DHT22(Pin(28))
+
+led_onboard = machine.Pin('LED', machine.Pin.OUT)
+
+def readDHT():
+    try:
+        dSensor.measure()
+        temp = dSensor.temperature()
+        temp_f = (temp * (9/5)) + 32.0
+        hum = dSensor.humidity()
+
+        current_seconds = utime.time()
+        local_time = utime.localtime(current_seconds)
+
+        print(f'{local_time[0:3]} {local_time[3:6]} Temperature= {temp:.2f} C, {temp_f:.2f} F, Humidity= {hum:.2f}')
+
+        led_onboard.value(1)
+        utime.sleep(0.3)
+        led_onboard.value(0)
+        utime.sleep(0.3)
+    except OSError as e:
+        print('Failed to read data from DHT sensor')
+
+while True:
+    readDHT()
+    utime.sleep(1)
+
 
 ```
 
-## MQTT
+## Putty
 
-訊息佇列遙測傳輸（Message Queuing Telemetry Transport）是一種輕量級的通訊協定，
-主要用於物聯網（IoT）設備之間的通訊。
-
-發布者（Publisher）把訊息送到某個主題（Topic），訂閱者（Subscriber）訂閱主題後收到訊息。
-中間通常有一個稱為 Broker（訊息代理伺服器） 的角色。
-
-### 連接 MQTT 伺服器
-
-:::caution
-
-要先安裝[連接MQTT用到的程式](/codes/MQTT.py)到 Pico 2W。
-
-:::
-
-```python
-
-```
+## ThingSpeak
