@@ -14,12 +14,12 @@
     "generate-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.3.2",
+    "@astrojs/cloudflare": "^14.3.3",
     "@astrojs/starlight": "^0.41.11",
-    "astro": "^7.3.3",
+    "astro": "^7.3.4",
     "sharp": "^0.35.4",
     "starlight-theme-rose-pine": "^0.2.0",
-    "wrangler": "^4.136.2"
+    "wrangler": "^4.137.0"
   },
   "devDependencies": {
     "prettier": "3.9.8",
