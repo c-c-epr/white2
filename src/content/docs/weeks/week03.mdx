@@ -9,6 +9,38 @@ DHT22 是一款數位式溫濕度感測器，能夠測量環境的溫度與濕�
 ### 讀取 DHT22 感測器資料
 
 ```python
+from machine import Pin
+import time
+import utime
+import dht
+
+dSensor = dht.DHT22(Pin(28))
+
+led_onboard = machine.Pin("LED", machine.Pin.OUT)
+
+
+def readDHT():
+    try:
+        dSensor.measure()
+        temp = dSensor.temperature()
+        temp_f = (temp * (9 / 5)) + 32.0
+        hum = dSensor.humidity()
+
+        print("Temperature= {} C, {} F".format(temp, temp_f))
+        print("Humidity= {} ".format(hum))
+    except OSError as e:
+        print("Failed to read data from DHT sensor")
+        led_onboard.value(1)
+        utime.sleep(0.3)
+        led_onboard.value(0)
+        utime.sleep(0.3)
+
+
+while True:
+    readDHT()
+    time.sleep(1)
+
+
 
 ```
 
