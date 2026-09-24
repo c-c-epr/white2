@@ -1,4 +1,4 @@
-import { readdirSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
 const weeksDirectory = fileURLToPath(
@@ -6,6 +6,11 @@ const weeksDirectory = fileURLToPath(
 );
 const weekSlugs = readdirSync(weeksDirectory)
   .filter((fileName) => /^week\d+\.(?:md|mdx)$/.test(fileName))
+  .filter((fileName) => {
+    const content = readFileSync(`${weeksDirectory}/${fileName}`, "utf8");
+    const frontmatter = /^---\s*\r?\n([\s\S]*?)\r?\n---/.exec(content)?.[1];
+    return !/^draft:\s*(?:true|yes|on)\s*$/im.test(frontmatter ?? "");
+  })
   .map((fileName) => fileName.replace(/\.(?:md|mdx)$/, ""))
   .sort((first, second) =>
     first.localeCompare(second, "en", { numeric: true }),
