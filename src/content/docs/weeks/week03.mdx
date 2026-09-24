@@ -31,7 +31,7 @@ def readDHT():
         led_onboard.value(1)
         utime.sleep(0.3)
         led_onboard.value(0)
-        utime.sleep(0.3)        
+        utime.sleep(0.3)
     except OSError as e:
         print("Failed to read data from DHT sensor")
 
