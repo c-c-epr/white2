@@ -28,12 +28,13 @@ def readDHT():
 
         print("Temperature= {} C, {} F".format(temp, temp_f))
         print("Humidity= {} ".format(hum))
-    except OSError as e:
-        print("Failed to read data from DHT sensor")
         led_onboard.value(1)
         utime.sleep(0.3)
         led_onboard.value(0)
-        utime.sleep(0.3)
+        utime.sleep(0.3)        
+    except OSError as e:
+        print("Failed to read data from DHT sensor")
+
 
 
 while True:
