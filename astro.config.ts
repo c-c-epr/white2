@@ -23,6 +23,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
+      lastUpdated: true,
       plugins: [
         starlightRosePine({
           light: { flavor: "dawn", accent: "rose" },
