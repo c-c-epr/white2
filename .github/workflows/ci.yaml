@@ -40,4 +40,4 @@ jobs:
       - run: pnpm install --frozen-lockfile --prefer-offline
       - run: pnpm build
       - run: pnpm exec wrangler whoami
-      - run: pnpm exec wrangler deploy
+      - run: pnpm exec wrangler preview --branch ${{ github.head_ref }} --commit-sha ${{ github.sha }} --url-only
