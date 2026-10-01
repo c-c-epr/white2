@@ -69,7 +69,7 @@ export default defineConfig({
             },
             {
               label: "content-mqtt.py",
-              link: "codes/content-mqttF.py",
+              link: "codes/content-mqtt.py",
               badge: { text: "檔案", variant: "tip" },
             },
           ],
