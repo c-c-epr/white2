@@ -67,6 +67,11 @@ export default defineConfig({
               link: "codes/wifi.py",
               badge: { text: "檔案", variant: "tip" },
             },
+            {
+              label: "content-mqtt.py",
+              link: "codes/content-mqttF.py",
+              badge: { text: "檔案", variant: "tip" },
+            },
           ],
         },
       ],
