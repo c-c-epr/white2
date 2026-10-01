@@ -11,8 +11,8 @@ dSensor = dht.DHT22(Pin(28))
 led_onboard = machine.Pin("LED", machine.Pin.OUT)
 
 # Network Initialization
-ssid = "TUNG"
-password = "ipadipad@tung"
+ssid = "Pixel4"
+password = "123456789"
 
 # Global variables for sensor readings
 temp = 0
@@ -83,7 +83,8 @@ except Exception as e:
 mqtt_host = "broker.mqttgo.io"  # Fixed case sensitivity
 mqtt_username = ""  # Your MQTTGO.io username
 mqtt_password = ""  # MQTTGO.io key
-mqtt_publish_topic = "yisong/tt"  # The MQTT topic for your feed
+mqtt_publish_topic = "yisong/temp"  # The MQTT topic for your feed溫度
+mqtt_publish_topic2 = "yisong/hum"  # 濕度
 mqtt_client_id = "somethingreallyrandomandunique123"
 
 # Initialize MQTT Client
@@ -118,10 +119,13 @@ try:
         if success:  # Only publish if sensor reading was successful
             # Send temperature in Celsius as simple string
             payload = f"{temp:.1f}"
+            payload2 = f"{hum:.1f}"
 
             try:
                 mqtt_client.publish(mqtt_publish_topic, payload)
                 print(f"Published temperature: {payload}°C")
+                mqtt_client.publish(mqtt_publish_topic2, payload2)
+                print(f"Published humidity: {payload2}")
 
                 # Brief LED flash to indicate successful publish
                 led_onboard.value(1)
