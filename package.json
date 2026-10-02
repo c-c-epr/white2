@@ -22,7 +22,7 @@
     "wrangler": "^4.138.0"
   },
   "devDependencies": {
-    "prettier": "3.9.8",
+    "prettier": "3.9.9",
     "prettier-plugin-astro": "1.0.1",
     "typescript": "^7.0.2"
   },
