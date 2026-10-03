@@ -47,8 +47,8 @@ password = "ipadipad@tung"
 <FileTree>
 
 - umqtt
-  - **[simple.py](/codes/MQTT.py)** 輔助函式庫，提供 MQTT 連線、訂閱、發布等功能（必裝）
-- [content-mqtt.py](/codes/content-mqtt.py) 主要程式（必裝）
+  - [simple.py](/codes/MQTT.py) 輔助函式庫，提供 MQTT 連線、訂閱、發布等功能（**必裝**）
+- [content-mqtt.py](/codes/content-mqtt.py) 主要程式（**必裝**）
 
 </FileTree>
 
@@ -72,3 +72,18 @@ mqtt_client_id = "somethingreallyrandomandunique123"
 ```
 
 ### 發送資料到 Think Speak
+
+安裝 [thinkspeak.py](/codes/thinkspeak.py) 到 Pico 2W。
+修改網路名稱與密碼、Think Speak 設定，然後將檔案安裝到 Pico 2W。
+
+```python /".{1,}"/
+//thinkspeak.py
+...
+# Network Initialization
+ssid = "Pixel4"
+password = "123456789"
+
+# ThingSpeak Configuration
+THINGSPEAK_WRITE_API_KEY = "YOUR_WRITE_API_KEY"  # 請替換為你的 Write API Key
+...
+```
