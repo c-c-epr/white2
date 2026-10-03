@@ -36,6 +36,8 @@ password = "ipadipad@tung"
 ...
 ```
 
+---
+
 ### 發送消息到 MQTT
 
 要先安裝[連接MQTT用到的程式](/codes/MQTT.py)到 Pico 2W。 檔案放在 `umqtt/simple.py`。
@@ -45,8 +47,8 @@ password = "ipadipad@tung"
 <FileTree>
 
 - umqtt
-  - **[simple.py](/codes/MQTT.py)** 務必安裝
-- [content-mqtt.py](/codes/content-mqtt.py)
+  - **[simple.py](/codes/MQTT.py)** 輔助函式庫，提供 MQTT 連線、訂閱、發布等功能（必裝）
+- [content-mqtt.py](/codes/content-mqtt.py) 主要程式（必裝）
 
 </FileTree>
 

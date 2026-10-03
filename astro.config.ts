@@ -56,10 +56,7 @@ export default defineConfig({
         },
         {
           label: "參考資料",
-          items: [
-            { autogenerate: { directory: "reference" } },
-            ...files(["MQTT.py", "wifi.py", "content-mqtt.py"]),
-          ],
+          items: [{ autogenerate: { directory: "reference" } }, ...files([])],
         },
       ],
       pagination: false,
