@@ -23,7 +23,13 @@ Pico 2W 內建的 WiFi 僅支援 2.4GHz 頻段，若使用 5GHz 頻段的 WiFi �
 
 ### 測試 Pico 2W 能連上 WiFi
 
-下載 [wifi.py](/codes/wifi.py)
+安裝此檔案
+
+<FileTree>
+
+- [wifi.py](/codes/wifi.py)
+
+</FileTree>
 
 需修改網路名稱與密碼，然後將檔案安裝到 Pico 2W。
 
@@ -40,9 +46,7 @@ password = "ipadipad@tung"
 
 ### 發送消息到 MQTT
 
-要先安裝[連接MQTT用到的程式](/codes/MQTT.py)到 Pico 2W。 檔案放在 `umqtt/simple.py`。
-
-然後安裝 [content-mqtt.py](/codes/content-mqtt.py) 到 Pico 2W。
+安裝以下兩個檔案
 
 <FileTree>
 
@@ -73,7 +77,14 @@ mqtt_client_id = "somethingreallyrandomandunique123"
 
 ### 發送資料到 Think Speak
 
-安裝 [thinkspeak.py](/codes/thinkspeak.py) 到 Pico 2W。
+安裝以下檔案
+
+<FileTree>
+
+- [thinkspeak.py](/codes/thinkspeak.py)
+
+</FileTree>
+
 修改網路名稱與密碼、Think Speak 設定，然後將檔案安裝到 Pico 2W。
 
 ```python /".{1,}"/
