@@ -7,6 +7,7 @@ import {
   weekSidebarItems,
   weeklyRedirects,
 } from "./src/config/weeks";
+import { files } from "./src/config/files";
 
 import starlightRosePine from "starlight-theme-rose-pine";
 
@@ -57,21 +58,7 @@ export default defineConfig({
           label: "參考資料",
           items: [
             { autogenerate: { directory: "reference" } },
-            {
-              label: "MQTT.py",
-              link: "codes/MQTT.py",
-              badge: { text: "檔案", variant: "tip" },
-            },
-            {
-              label: "wifi.py",
-              link: "codes/wifi.py",
-              badge: { text: "檔案", variant: "tip" },
-            },
-            {
-              label: "content-mqtt.py",
-              link: "codes/content-mqtt.py",
-              badge: { text: "檔案", variant: "tip" },
-            },
+            ...files(["MQTT.py", "wifi.py", "content-mqtt.py"]),
           ],
         },
       ],
