@@ -2,6 +2,8 @@
 title: Week 4
 ---
 
+import { FileTree } from "@astrojs/starlight/components";
+
 ## MQTT
 
 訊息佇列遙測傳輸（Message Queuing Telemetry Transport）是一種輕量級的通訊協定，
@@ -12,19 +14,59 @@ title: Week 4
 
 ## Pico 2W 連接網路
 
-:::caution
+### 手機熱點
 
-要先安裝[連接MQTT用到的程式](/codes/MQTT.py)到 Pico 2W。 檔案放在 `umqtt/simple.py`。
+:::caution
+Pico 2W 內建的 WiFi 僅支援 2.4GHz 頻段，若使用 5GHz 頻段的 WiFi 熱點，Pico 2W 將無法連線。  
+故 iOS 裝置開啟個人熱點時，請務必將「最大相容性」選項打開，否則 Pico 2W 將無法連線。
 :::
 
-然後下載 [wifi.py](/codes/wifi.py)
+### 測試 Pico 2W 能連上 WiFi
 
-## MQTT 前置作業
+下載 [wifi.py](/codes/wifi.py)
 
-### 1. 手機安裝
+需修改網路名稱與密碼，然後將檔案安裝到 Pico 2W。
 
-### 連接 MQTT 伺服器
+```python /".{1,}"/
+//wifi.py
+...
+# Network Initialization
+ssid = "TUNG"
+password = "ipadipad@tung"
+...
+```
 
-然後下載 [wifi.py](/codes/wifi.py)
+### 發送消息到 MQTT
 
-安裝 [content-mqtt.py](codes/content-mqttF.py) 到 Pico 2W。
+要先安裝[連接MQTT用到的程式](/codes/MQTT.py)到 Pico 2W。 檔案放在 `umqtt/simple.py`。
+
+然後安裝 [content-mqtt.py](/codes/content-mqtt.py) 到 Pico 2W。
+
+<FileTree>
+
+- umqtt
+  - **[simple.py](/codes/MQTT.py)** 務必安裝
+- [content-mqtt.py](/codes/content-mqtt.py)
+
+</FileTree>
+
+需修改網路名稱與密碼、MQTT 設定，然後將檔案安裝到 Pico 2W。
+
+```python /".{1,}"/
+//content-mqtt.py
+...
+# Network Initialization
+ssid = "Pixel4"
+password = "123456789"
+...
+# MQTT Configuration
+mqtt_host = "broker.mqttgo.io"  # Fixed case sensitivity
+mqtt_username = ""  # Your MQTTGO.io username
+mqtt_password = ""  # MQTTGO.io key
+mqtt_publish_topic = "yisong/temp"  # The MQTT topic for your feed溫度
+mqtt_publish_topic2 = "yisong/hum"  # 濕度
+mqtt_client_id = "somethingreallyrandomandunique123"
+...
+```
+
+### 發送資料到 Think Speak
