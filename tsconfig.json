@@ -8,5 +8,10 @@
     "../tsconfig.json",
     "./worker-configuration.d.ts"
   ],
-  "exclude": ["dist", "astro.config.ts"]
+  "exclude": ["dist", "astro.config.ts"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
 }
