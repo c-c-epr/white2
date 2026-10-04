@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
-import cloudflare from "@astrojs/cloudflare";
 import {
   latestWeekPath,
   weekSidebarItems,
@@ -82,7 +81,4 @@ export default defineConfig({
     },
   },
   session: false,
-  adapter: cloudflare({
-    imageService: "compile",
-  }),
 });
