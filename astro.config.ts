@@ -44,7 +44,13 @@ export default defineConfig({
       locales: {
         root: { label: "繁體中文", lang: "zh-TW" },
       },
-      social: [],
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/c-c-epr/white2",
+        },
+      ],
       sidebar: [
         {
           label: "介紹",
