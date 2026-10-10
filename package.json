@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.4",
-    "@astrojs/starlight": "^0.41.11",
+    "@astrojs/starlight": "^0.42.5",
     "astro": "^7.3.8",
     "sharp": "^0.35.5",
     "starlight-theme-rose-pine": "^0.2.0",
