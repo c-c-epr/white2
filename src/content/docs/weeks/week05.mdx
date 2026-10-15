@@ -1,4 +1,35 @@
 ---
 title: Week 5
-draft: true
 ---
+
+發送資料到 Think Speak
+
+安裝以下檔案
+
+<FileTree>
+
+- [pm.py](/codes/pm.py)
+
+</FileTree>
+
+修改網路名稱與密碼、Think Speak 設定，然後將檔案安裝到 Pico 2W。
+
+```python /".{1,}"/
+...
+# Network Initialization
+ssid = "Pixel4"
+password = "12345678"
+
+# Global variables for sensor readings
+temp = 0
+temp_f = 0
+hum = 0
+pm1 = 0
+pm25 = 0
+pm10 = 0
+
+# ThingSpeak Configuration
+THINGSPEAK_API_KEY = "YOUR_WRITE_API_KEY_HERE"  # 請替換為你的 Write API Key
+
+...
+```
