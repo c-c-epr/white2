@@ -14,17 +14,17 @@
     "generate-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/cloudflare": "^14.4.0",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/cloudflare": "^14.4.2",
     "@astrojs/starlight": "^0.41.11",
-    "astro": "^7.4.0",
+    "astro": "^7.4.2",
     "sharp": "^0.35.5",
     "starlight-theme-rose-pine": "^0.2.0",
-    "wrangler": "^4.151.1"
+    "wrangler": "^4.152.0"
   },
   "devDependencies": {
     "prettier": "^3.9.10",
-    "prettier-plugin-astro": "^1.1.1",
+    "prettier-plugin-astro": "^1.1.2",
     "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@12.14.0"
