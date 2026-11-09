@@ -17,7 +17,7 @@
     "@astrojs/check": "^0.9.12",
     "@astrojs/cloudflare": "^14.4.4",
     "@astrojs/starlight": "^0.41.11",
-    "astro": "^7.4.5",
+    "astro": "^7.4.7",
     "sharp": "^0.35.5",
     "starlight-theme-rose-pine": "^0.2.0",
     "wrangler": "^4.157.0"
